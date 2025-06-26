@@ -1,0 +1,4 @@
+# Ignora PDFs y datos locales
+data/
+.env
+__pycache__/
