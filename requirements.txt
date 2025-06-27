@@ -1,1 +1,8 @@
 imap-tools
+python-dotenv
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+pdfplumber
+openpyxl
+pandas
