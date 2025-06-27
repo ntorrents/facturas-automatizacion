@@ -6,3 +6,5 @@ google-auth-oauthlib
 pdfplumber
 openpyxl
 pandas
+google-cloud-documentai
+google-auth
