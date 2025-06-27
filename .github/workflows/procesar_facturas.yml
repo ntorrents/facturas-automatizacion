@@ -1,0 +1,35 @@
+name: Procesar y subir facturas
+
+on:
+  schedule:
+    - cron: "0 8 1 * *" # Ejecuta el día 1 de cada mes a las 08:00 UTC
+  workflow_dispatch: # Permite ejecutarlo manualmente desde GitHub
+
+jobs:
+  procesar_facturas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Crear archivo de credenciales
+        run: |
+          echo "$GOOGLE_APPLICATION_CREDENTIALS_JSON" > documentai-key.json
+
+      - name: Ejecutar script
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: documentai-key.json
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+        run: |
+          python scripts/actualizar_google_sheets.py
