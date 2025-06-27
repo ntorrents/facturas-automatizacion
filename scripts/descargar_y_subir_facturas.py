@@ -71,7 +71,7 @@ def descargar_y_subir_facturas():
 
     with MailBox(IMAP_SERVER).login(EMAIL, PASSWORD, initial_folder='INBOX') as mailbox:
         print("Buscando correos con facturas no leídas...")
-        for msg in mailbox.fetch(AND(subject='factura', seen=True)):
+        for msg in mailbox.fetch(AND(subject='factura', seen=False)):
             print(f"📧 Asunto: {msg.subject}")
             for att in msg.attachments:
                 if att.filename.endswith('.pdf'):
