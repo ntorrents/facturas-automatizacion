@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "facturas-automatizacion-464120",
+  "private_key_id": "3ea6b0fea0d5abd54257771cb53047e9c9200c8b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDhdXfBnPZmO791\n4KuEwi7zVmK0sbuZVojS3rxTho2cGaw7IVsGE768BrpHbZg7D6DxT+FjHGn98g3M\nOIpHmtLhwcU1bd1p3NJumOTQHlTPpzV9UGpGoYS4dPkyTFncpyglenZqmKHAUOIg\noRKBtmYWxuL2eP8ImRC0RuKY+YlVeNudCj2o7pPws76GYmPGsS91z1GXa3mDJlE1\n9MYgZk1gzp6k7INJhFwlOnH1xLuHYsBOd2QJLKoWj2UftTBdjpsE79UwMWZGJJXR\nKXNNR4UzTJrMM6QQEGi80+tXfrx3e+bW0riYSu4Njg04iaDtKx43wgf/QfZZbvMf\nfbO3ij+DAgMBAAECggEAGq/qaIcZXXmWDLB27QSFRTWFAomFQL3O/VLzLNng+kjJ\nq8gje6ErsxsCwsC0w8zySo4fijlLTI1x16obqCUp8CIdI1lpW4YRfJjpgL8OX/QV\nb0ttAQZObP0foDYMbwN0S5dm2/BMOTT5x035oFQEWo7ZP76LxatEoGpBmUT0XiLy\nzjMctS6nfamF9Kka+TVv21QGCsvFP4+9CfpAlOsZe29aHLWUEUfoJILYoGhTG+NS\npGRBHypRieXWrx7kpYJFTcVbrRkSarXPgMD+Bfhg872MltCN/v+Vl8v6UNF/ZNzf\ne1xd3Lj+i9Ig92tP38+oRbYVetokw6kGpjkCK+2xJQKBgQDz1gaYeSXXc4YLOm49\nh9WGF+z5Qspw2ygifyxoAlt6KOv1BhM8mqPDYbrARv16zdzYq/jecGD3zlKmsCC/\nh7bCJnAD507BjGwGTN2rJqsoPzEROIh29yLzjy51W+Qo0lB+RSJVd+Kn6aSEDTfW\n+M5K0Kdw3B2trTcuuzBXA6WnZQKBgQDstMBT4XIne2mby12uFLxw7WxKaQ/6vFJQ\nQG8VVFrWb0grhjUsQSbwf2tk8tfVv0Rym8g2DV8NeK+Q2OXX/2B1Sg75g3geMLqm\nK1w9ZvbzmJj+ZwfuCDGZsnQr0kK01OVN7hyFm+Y1+enfcm0N0M3ACTCP8gALsdF9\nKz1LYS6gxwKBgQDTOpQqH8DFXMFBFtQLH5G8gRt7bv26OFATWkHYtDoUoECP2Txu\n4rN8/Ttvd8/8QzvOw2NrJsUJxsVYuvkTkniixfOBni5egsvNxWa97liVG/Dgry2g\niUTQ4zdm2TzUlCTAzhkJGzrRJRisgFrgMlda/lge78ASBRzpsaUVrAYj9QKBgHGd\nvOdGQkXjPejS749cUqsduynoTgw7EoOEug0R5VwiJBEIJUOtriQn9QOKcMEfQpqE\nXdBcELDlqder1H8eDE2gE5n+Wcyb9StHisnKP2TjbSRHjg3aDvzIJGzYSr6DpeEH\nFtem4hQsde6T/PZxsCCqCI4/SXhTjMs40v34kqoHAoGBAOLCBqsncdPLsdmMYQE9\nXSeQrIFdblk728ET+AMaveDq8Lproaj8RMVfcHDwHId+U+0fdUa1WHVxWIqYKwQM\ngOGZXxMA+6/wwkcKN19CwAQJY9AyQOB5ioHp1BmYrZnydGxkpcHFTOTa0alheLPw\nXXyaJbZRWG4+k4QoSEIegB92\n-----END PRIVATE KEY-----\n",
+  "client_email": "facturas-service-account@facturas-automatizacion-464120.iam.gserviceaccount.com",
+  "client_id": "101088610651558123910",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/facturas-service-account%40facturas-automatizacion-464120.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
