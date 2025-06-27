@@ -4,14 +4,16 @@ import pandas as pd
 import glob
 from dateutil import parser
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "documentai-key.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+
 
 client_options = {"api_endpoint": "eu-documentai.googleapis.com"}
 client = documentai.DocumentProcessorServiceClient(client_options=client_options)
 
-PROJECT_ID = "179194022162"
-LOCATION = "eu"
-PROCESSOR_ID = "c68749698500d498"
+
+PROJECT_ID = os.getenv("PROJECT_ID")
+LOCATION = os.getenv("LOCATION")
+PROCESSOR_ID = os.getenv("PROCESSOR_ID")
 
 PDF_FOLDER = "data"
 OUTPUT_XLSX = "facturas_extraidas_todas.xlsx"

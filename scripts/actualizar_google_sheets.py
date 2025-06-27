@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # carga variables desde .env
 
-SERVICE_ACCOUNT_FILE = os.getenv('GOOGLE_APPLICATION_CREDENTIALS', 'documentai-key.json')
+SERVICE_ACCOUNT_FILE = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
 SPREADSHEET_ID = os.getenv('SPREADSHEET_ID')
 RANGE_NAME = os.getenv('RANGE_NAME', 'Facturas!A1')
 
