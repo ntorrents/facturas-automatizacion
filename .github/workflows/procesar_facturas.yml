@@ -2,7 +2,7 @@ name: Proceso mensual de facturas
 
 on:
   schedule:
-    - cron: '0 6 1 * *'  # Día 1 de cada mes a las 6:00 UTC
+    - cron: "0 6 1 * *" # Día 1 de cada mes a las 6:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -10,44 +10,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout del repositorio
-      uses: actions/checkout@v3
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
 
-    - name: Configurar Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
 
-    - name: Instalar dependencias
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Crear archivo de credenciales
-      run: |
-        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" > documentai-key.json
+      - name: Crear archivo de credenciales
+        run: |
+          echo "$GOOGLE_APPLICATION_CREDENTIALS_JSON" > documentai-key.json
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
 
-    - name: Ejecutar scripts: descargar correos
-      env:
-        EMAIL: ${{ secrets.EMAIL }}
-        PASSWORD: ${{ secrets.PASSWORD }}
-        IMAP_SERVER: ${{ secrets.IMAP_SERVER }}
-      run: |
-        python scripts/descargar_y_subir_facturas.py
+      - name: Ejecutar scripts descargar correos
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          IMAP_SERVER: ${{ secrets.IMAP_SERVER }}
+        run: |
+          python scripts/descargar_y_subir_facturas.py
 
-    - name: Ejecutar scripts: procesar con Document AI
-      env:
-        GOOGLE_APPLICATION_CREDENTIALS: documentai-key.json
-        PROJECT_ID: ${{ secrets.PROJECT_ID }}
-        LOCATION: ${{ secrets.LOCATION }}
-        PROCESSOR_ID: ${{ secrets.PROCESSOR_ID }}
-      run: |
-        python scripts/procesar_factura_google.py
+      - name: Ejecutar scripts procesar con Document AI
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: documentai-key.json
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          LOCATION: ${{ secrets.LOCATION }}
+          PROCESSOR_ID: ${{ secrets.PROCESSOR_ID }}
+        run: |
+          python scripts/procesar_factura_google.py
 
-    - name: Ejecutar scripts: actualizar Google Sheet
-      env:
-        GOOGLE_APPLICATION_CREDENTIALS: documentai-key.json
-        SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
-        RANGE_NAME: ${{ secrets.RANGE_NAME }}
-      run: |
-        python scripts/actualizar_google_sheets.py
+      - name: Ejecutar scripts actualizar Google Sheet
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: documentai-key.json
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+          RANGE_NAME: ${{ secrets.RANGE_NAME }}
+        run: |
+          python scripts/actualizar_google_sheets.py
